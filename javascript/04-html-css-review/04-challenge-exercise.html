@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Page</title>
+    <style>
+      .add-to-cart {
+        background-color: yellow;
+      }
+      .buy-now {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 4i. Product Card UI Structure -->
+    <p>Adults Plain Cotton T-shirt</p> 
+    <p>Price: $7.99</p>
+ 
+    <!-- 4j. Onclick event handlers added -->
+    <button 
+      class="add-to-cart" 
+      onclick="alert('Added');">
+      Add to Cart
+    </button>
+    
+    <button 
+      class="buy-now" 
+      onclick="
+        console.log('Loading...'); 
+        alert('Purchased');
+      ">
+      Buy now
+    </button>
+  </body>
+</html>

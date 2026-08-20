@@ -33,3 +33,31 @@ console.log('3h Accurate Total:', `Total cost: $${(599 + 295) / 100}`);
 // 3j. Multi-line String with alert
 // alert(`Total cost: $${(599 + 295) / 100}
 // Thank you, come again!`);
+
+// ----------------------------------------------------
+// Challenge Exercises (Amazon Project Setup)
+// 2 Basketballs ($20.95 each) + $4.99 shipping
+// 2 T-Shirts ($7.99 each) + $4.99 shipping
+// ----------------------------------------------------
+
+// Setup variables in cents (To avoid floating point inaccuracies)
+const basketballCents = 2095;
+const tShirtCents = 799;
+const shippingCentsPerGroup = 499;
+
+// 3k. First line: Items count and total items cost using interpolation
+const totalItemsCount = 2 + 2;
+const totalItemsCostCents = (2 * basketballCents) + (2 * tShirtCents);
+console.log(`Items (${totalItemsCount}): $${totalItemsCostCents / 100}`);
+
+// 3l. Second line: Shipping & handling total
+const totalShippingCents = shippingCentsPerGroup + shippingCentsPerGroup;
+console.log(`Shipping & handling: $${totalShippingCents / 100}`);
+
+// 3m. Third line: Total before tax
+const totalBeforeTaxCents = totalItemsCostCents + totalShippingCents;
+console.log(`Total before tax: $${totalBeforeTaxCents / 100}`);
+
+// 3n. Fourth line: Estimated tax (10%) using Math.round()
+const estimatedTaxCents = Math.round(totalBeforeTaxCents * 0.1);
+console.log(`Estimated tax (10%): $${estimatedTaxCents / 100}`);

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity Project</title>
+  </head>
+  <body>
+    <!-- Display Cart Quantity -->
+    <button onclick="console.log(`Cart Quantity: ${cartQuantity}`);">
+      Show Quantity
+    </button>
+
+    <br><br>
+
+    <!-- Increase Buttons-->
+    <button onclick="
+      cartQuantity++;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      Add to Cart
+    </button>
+
+    <button onclick="
+      cartQuantity += 2;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      +2
+    </button>
+
+    <button onclick="
+      cartQuantity += 3;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      +3
+    </button>
+
+    <!-- 5h. Add +4 and +5 buttons -->
+    <button onclick="
+      cartQuantity += 4;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      +4
+    </button>
+
+    <button onclick="
+      cartQuantity += 5;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      +5
+    </button>
+
+    <br><br>
+
+    <!-- Decrease Buttons (5i - 5k) -->
+    <button onclick="
+      cartQuantity--;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      Remove from cart
+    </button>
+
+    <button onclick="
+      cartQuantity -= 2;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      -2
+    </button>
+
+    <button onclick="
+      cartQuantity -= 3;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      -3  
+    </button>
+
+    <br><br>
+
+    <!-- Reset Cart -->
+    <button onclick="
+      cartQuantity = 0;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      Reset Cart
+    </button> 
+
+    <script>
+      let cartQuantity = 0;
+    </script>
+  </body>
+</html>

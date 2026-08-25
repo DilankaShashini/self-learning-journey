@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans & logic Practice</title>
+  </head>
+  <body>
+    <script>
+      // 1. Comparison Operators
+      console.log('3 < 5:', 3 < 5);
+      console.log('5 == "5.00":', 5 == '5.00');   // true (Loose)
+      console.log('5 === "5.00":', 5 === '5.00'); // false (Strict)
+
+      // 2. If-Statements & Conditions
+      const age = 15;
+      if (age >= 16){
+        console.log('You can drive');
+      }else if (age >= 14){
+        console.log('Almost there!');
+      }else{
+        console.log('You cannot drive');
+      }
+
+      // 3. Truthy & Falsy Examples
+      if (0) console.log('This will not run (0 is falsy)');
+      if ('Hello') console.log('This will run ("Hello" is truthy)');
+
+      // 4. Shortcuts: Ternary, Guard, Default
+      const result = true ? 'Passed' : 'Failed';
+      console.log('Ternary:', result);
+
+      // Guard Operator
+      false && console.log('hello'); // Returns false, console.log does NOT run
+      const message = 5 && 'hello';  // 5 is truthy, so returns 'hello'
+      
+      // Default operator
+      const currency1 = undefined || 'USD'; 
+      /*
+        Returns 'USD' (fallback default) to variable currency1.
+        Evaluated output of a variable declaration statement is `undefined`. 
+      */
+      const currency2 = 'EUR' || 'USD'; // Returns 'EUR'
+    </script>
+  </body>
+</html>

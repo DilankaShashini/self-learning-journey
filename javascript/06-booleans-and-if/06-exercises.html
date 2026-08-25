@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 6 Exercises</title>
+  </head>
+  <body>
+    <script>
+      // ======================================
+      // 6a, 6b, 6c: Hour Greeting Logic
+      // ======================================
+      const hour = 14; // 24-hour format (0-23)
+      const name = 'Shashini';
+      
+      // Logical checking for time intervals 
+      if (hour >= 6 && hour <= 12){
+        console.log(`Good morning ${name}!`);
+      } else if (hour >= 13 && hour <= 17){
+        console.log(`Good afternoon ${name}!`);
+      } else {
+        console.log(`Good night ${name}!`)
+      }
+
+      // =============================================
+      // 6d & 6e: Amusement Park Discount Eligibility
+      // =============================================
+      const age = 2;
+      const isHoliday = true;
+
+      // Children <= 6 OR Seniors >= 65 qualify for discount ONLY IF it is not a holiday.
+      // Brackets () group the age conditions due to higher precedence of && over ||
+      if (!isHoliday && (age <= 6 || age >= 65)){
+        console.log('Discount');
+      } else{
+        console.log('No discount');
+      } // Output is 'No discount'
+    </script>
+  </body>
+</html>

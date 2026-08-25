@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coin-Flip Game</title>
+  </head>
+  <body>
+    <script>
+      // 6f. Generate random number between 0 and 1
+      const randomNumber = Math.random();
+
+      // 6g. Determine 'heads' or 'tails' using conditional logic and display in the console.
+      if (randomNumber < 0.5){
+        console.log('heads');
+      } else {
+        console.log('tails');
+      }
+
+      // 6h. Determine 'heads' or 'tails' using conditional logic and save the result in a variable.
+      let result = '';
+
+      if (randomNumber < 0.5){
+        result = 'heads';
+      } else {
+        result = 'tails';
+      }
+
+      // 6i. Set player guess and evaluate match
+      const guess = 'tails';
+
+      if (guess === result) console.log('You win!');
+      else console.log('You lose!');
+
+      // 6j. Ternary Operator version 
+      const matchResult = guess === result ? 'You win!' : 'You lose!';
+      console.log(`Coin flip result: ${result}. Guess: ${guess}. Outcome: ${matchResult}`);
+    </script>
+  </body>
+</html>

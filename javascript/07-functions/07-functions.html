@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions Practice</title>
+  </head>
+  <body>
+    <script>
+      // 1. Basic Function Declaration & Execution
+      function function1(){
+        console.log('hello')
+        console.log(2 + 2);
+      }
+
+      function1(); // Call 1
+      function1(); // Call 2
+
+      // 2. Function with Parameters & Default Value
+      function calculateTax(cost, taxPercent = 0.1){
+        console.log(`Tax for $${cost}:`, cost * taxPercent)
+      }
+
+      calculateTax(2000, 0.2); // 400 (Explicit argument)
+      calculateTax(5000);      // 500 (Uses default 0.1)
+
+      // 3. Return Statement Example
+      function getGreeting(name){
+        return `Hello ${name}!`;
+        // Code here will not execute
+      }
+
+      const greetingMessage = getGreeting('Shashini');
+      console.log(greetingMessage);
+    </script>
+  </body>
+</html>

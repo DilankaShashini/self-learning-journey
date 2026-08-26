@@ -76,7 +76,7 @@
     </button>
 
     <button onclick="
-      if (cartQuantity - 2 < 0 || cartQuantity < 2) alert('Not enough items in the cart');
+      if (cartQuantity - 2 < 0) alert('Not enough items in the cart');
       else {
         cartQuantity -= 2;
         console.log(`Cart Quantity: ${cartQuantity}`);
@@ -86,7 +86,7 @@
     </button>
 
     <button onclick="
-      if (cartQuantity - 3 < 0 || cartQuantity < 3) alert('Not enough items in the cart');
+      if (cartQuantity - 3 < 0) alert('Not enough items in the cart');
       else {
         cartQuantity -= 3;
         console.log(`Cart Quantity: ${cartQuantity}`);

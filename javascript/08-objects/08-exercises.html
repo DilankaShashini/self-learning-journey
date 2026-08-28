@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 8 Exercises</title>
+  </head>
+  <body>
+    <script>
+      // ==========================================
+      // 8a, 8b, 8c: Object Manipulation
+      // ==========================================
+      // 8a: Create Amazon basketball product object
+      const product = {
+        name: 'basketball',
+        price: 2095
+      };
+      console.log('8a:', product);
+
+      // 8b: Increase price by 500 cents using dot notation
+      product.price += 500;
+      console.log('8b (Updated Price):', product);
+      
+      // 8c: Add delivery-time using bracket notation
+      product['delivery-time'] = '3 days';
+      console.log('8c (Added delivery-time):', product);
+
+      // ================================================
+      // 8d: Compare Product Prices
+      // ================================================
+      function comparePrice(product1, product2){
+        if (product1.price < product2.price) return product1;
+        else return product2;
+      }
+
+      const prod1 = { name: 'socks', price: 1090 }
+      const prod2 = { name: 'shirt', price: 2500 }
+      console.log('8d (Less Expensive Product):', comparePrice(prod1, prod2));
+
+      // ================================================
+      // 8e: Compare Product Values (Reference Check)
+      // ================================================
+      function isSameProduct(product1, product2){
+        // Checking internal values directly because objects are references and cannot be compared directly using (product1 === product2)
+        return (
+          product1.name === product2.name &&
+          product1.price === product2.price
+        );
+      }
+
+      const prod3 = { name: 'socks', price: 1090 };
+      const prod4 = { name: 'socks', price: 1090 };
+      const prod5 = { name: 'hat', price: 1500 };
+
+      console.log('8e (prod3 vs prod4):', isSameProduct(prod3, prod4)); // true
+      console.log('8e (prod3 vs prod5):', isSameProduct(prod3, prod5)); // false
+
+      // ==================================================
+      // 8f & 8g: Built-in String Methods (Auto-boxing)
+      // ==================================================
+      // 8f: Convert string to lowercase using .toLowerCase()
+      const originalText = 'Good Bye!';
+      const lowerText = originalText.toLowerCase();
+      console.log('8f (Lowercase):', lowerText); // 'good bye!'
+
+      // 8g: Repeat string multiple times using .repeat()
+      const str = 'test';
+      const repeatedStr = str.repeat(2);
+      console.log('8g (Repeated String):', repeatedStr); // 'testtest'
+    </script>
+  </body>
+</html>

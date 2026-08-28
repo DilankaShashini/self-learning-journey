@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator (LocalStorage Version)</title>
+  </head>
+  <body>
+    <!-- Number & Operator Buttons -->
+    <p>
+      Calculator 
+      <br><br>
+      <!-- Row 1 -->
+      <button onclick="updateCalculation('1');">1</button>
+      <button onclick="updateCalculation('2');">2</button>
+      <button onclick="updateCalculation('3');">3</button>
+      <button onclick="updateCalculation('+');">+</button>
+    </p>
+
+    <p>
+      <!-- Row 2 -->
+      <button onclick="updateCalculation('4');">4</button>
+      <button onclick="updateCalculation('5');">5</button>
+      <button onclick="updateCalculation('6');">6</button>
+      <button onclick="updateCalculation('-');">-</button>
+    </p>
+    
+    <p>
+      <!-- Row 3 -->
+      <button onclick="updateCalculation('7');">7</button>
+      <button onclick="updateCalculation('8');">8</button>
+      <button onclick="updateCalculation('9');">9</button>
+      <button onclick="updateCalculation('*');">*</button>
+    </p>
+    
+    <p>
+      <!-- Row 4 -->
+      <button onclick="updateCalculation('0');">0</button>
+      <button onclick="updateCalculation('.');">.</button>
+      <button onclick="
+        // Evaluate mathematical expression string
+        calculation = eval(calculation);
+        console.log(calculation);
+        // Save evaluation result to localStorage
+        localStorage.setItem('calculation', calculation);
+      ">
+        =
+      </button>
+      <button onclick="updateCalculation('/');">/</button>
+    </p>
+
+    <!-- Clear Button-->
+    <p>
+      <button onclick="
+        calculation = '';
+        console.log('Cleared!');
+        // Remove saved calculation from localStorage
+        localStorage.removeItem('calculation');
+      ">
+        Clear
+      </button>
+    </p>
+
+    <script>
+      // 8h: Retrieve stored calculation on page load or fallback to empty string
+      let calculation = localStorage.getItem('calculation') || '';
+
+      function updateCalculation(key){
+        calculation += key;
+        console.log(calculation);
+
+        // Persist current calculation string to localStorage
+        localStorage.setItem('calculation', calculation);
+      }
+    </script>
+  </body>
+</html>

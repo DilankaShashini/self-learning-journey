@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coin-Flip Game (Objects & LocalStorage)</title>
+  </head>
+  <body>
+    <p>Coin Flip Game</p>
+
+    <!-- 8i: Interactive Play Buttons -->
+    <button onclick = "playGame('heads');">Heads</button>
+    <button onclick = "playGame('tails');">Tails</button>
+
+    <!-- Reset Score Button -->
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      localStorage.removeItem('score');
+      console.log('Score reset. Wins:', score.wins, 'Losses:', score.losses);
+    ">
+      Reset Score
+    </button>
+
+    <script>
+      // 8k: Retrieve score object from localStorage using default value shortcut
+      let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+
+      // 8i, 8j, 8k: Game logic with score tracking and persistence
+      function playGame(guess){
+        // Generate random number between 0 and 1
+        const randomNumber = Math.random();
+
+        // Ternary operator to determine coin outcome
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+      
+        // Evaluate player outcome
+        if (guess === result) {
+          console.log('You win!');
+          score.wins ++;
+        } else {
+          console.log('You lose!');
+          score.losses ++;
+        } 
+
+        // 8k: Persist updated score object as JSON string
+        localStorage.setItem('score', JSON.stringify(score));
+
+        // Display current game state in console
+        console.log(`Result: ${result} | Guess: ${guess} | Wins: ${score.wins}, Losses: ${score.losses}`);
+      }
+    </script>
+  </body>
+</html>

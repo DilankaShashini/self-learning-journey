@@ -1,0 +1,27 @@
+<!--Challenge Exercise 9h-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Live Input Mirroring</title>
+  </head>
+  <body>
+    <!-- Live input using onkeyup event -->
+    <input 
+      placeholder="Type something" 
+      class="js-text-input" 
+      onkeyup="updateLiveText();"
+    >
+
+    <p class="js-live-text-display"></p>
+
+    <script>
+      // 9h: Runs after every key press and release to display typed content dynamically
+      function updateLiveText() {
+        const inputElement = document.querySelector('.js-text-input');
+        
+        document.querySelector('.js-live-text-display')
+          .innerText = inputElement.value;
+      }
+    </script>
+  </body>
+</html>

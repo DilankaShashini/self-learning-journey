@@ -1,0 +1,57 @@
+<!--Challenge Exercise 9i-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity (DOM Version)</title>
+  </head>
+  <body>
+    <p>Cart Quantity Project</p>
+
+    <button onclick="displayQuantity();">Show Quantity</button>
+    <button onclick="updateQuantity(1);">Add to Cart</button>
+    <button onclick="updateQuantity(2);">+2</button>
+    <button onclick="updateQuantity(3);">+3</button>
+    <button onclick="updateQuantity(4);">+4</button>
+    <button onclick="updateQuantity(5);">+5</button>
+
+    <button onclick="updateQuantity(-1);">Remove from cart</button>
+    <button onclick="updateQuantity(-2);">-2</button>
+    <button onclick="updateQuantity(-3);">-3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      displayQuantity();
+    ">Reset Cart</button>
+
+    <!-- Paragraph to display cart quantity on page -->
+    <p class="js-cart-quantity-display"></p>
+
+    <script>
+      let cartQuantity = 0;
+
+      // Render cart quantity when page loads
+      displayQuantity();
+
+      function updateQuantity(change) {
+        if (cartQuantity + change > 10) {
+          alert('The cart is full');
+          return;
+        }
+
+        if (cartQuantity + change < 0) {
+          alert('Not enough items in the cart');
+          return;
+        }
+
+        cartQuantity += change;
+        displayQuantity();
+      }
+
+      // Helper function to update the DOM text
+      function displayQuantity() {
+        document.querySelector('.js-cart-quantity-display')
+          .innerHTML = `Cart quantity: ${cartQuantity}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!--Challenge Exercise 9g-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Shipping Calculator Fix</title>
+  </head>
+  <body>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+    
+    <input 
+      placeholder="Cost of order" 
+      class="js-cost-input" 
+      onkeydown="handleCostKeyDown(event);"
+    >
+
+    <button onclick="calculateTotal();">Calculate</button>
+
+    <p class="js-total-cost"></p>
+    
+    <script>
+      function handleCostKeyDown(event) {
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+
+        // Convert string to number (convert dollars to cents to avoid imprecise floating point math)
+        let cost = Number(inputElement.value) * 100;
+
+        if (cost < 4000) {
+          cost = cost + 1000;
+        } 
+
+        // Convert cents back to dollars and format correctly
+        document.querySelector('.js-total-cost')
+          .innerHTML = `$${(cost / 100).toFixed(2)}`;
+      } 
+    </script>
+  </body>
+</html>

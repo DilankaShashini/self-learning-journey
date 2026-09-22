@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <!-- Project 1: YouTube Subscribe Button -->
+    <p>YouTube Subscribe Button</p>
+
+    <!-- Using .innerText to avoid issues with extra HTML whitespaces -->
+    <button onclick="subscribe();" class="js-subscribe-button">
+      Subscribe
+    </button>
+
+    <hr>
+
+    <!-- Project 2: Amazon Shipping Calculator -->
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+
+    <!-- onkeydown listener passes the native 'event' object to handle Enter key -->
+    <input 
+      placeholder="Cost of order" 
+      class="js-cost-input" 
+      onkeydown="handleCostKeyDown(event);"
+    >
+
+    <button onclick="calculateTotal();">Calculate</button>
+
+    <!-- Display result dynamically -->
+    <p class="js-total-cost"></p>
+
+    <script>
+      // Function for YouTube Subscribe Button Logic
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        // Check visible innerText rather than innerHTML to ignore formatting spaces
+        if (buttonElement.innerText === 'Subscribe') {
+          buttonElement.innerText = 'Subscribed';
+        } else {
+          buttonElement.innerText = 'Subscribe';
+        }
+      }
+
+      // Event handler for Keyboard input on shipping calculator
+      function handleCostKeyDown(event) {
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+
+      // Function for Amazon Shipping Calculation
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+
+        // Convert string value from input element into a explicit Number
+        let cost = Number(inputElement.value);
+
+        // Apply $10 shipping fee for orders less than $40
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+
+        // Display updated total cost in DOM
+        document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`;
+      }
+    </script>
+  </body>
+</html>

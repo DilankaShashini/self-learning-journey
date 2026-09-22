@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Basics Practice</title>
+  </head>
+  <body>
+    <button>First Button</button>
+    <button class="js-button">Second Button</button>
+
+    <script>
+      // 1. Modifying page title and checking document type
+      document.title = 'DOM Practice - Changed';
+      console.log('Title:', document.title);
+      console.log('Type of document.body:', typeof document.body); // 'object'
+
+      // 2. Accessing element by Tag Name
+      const firstButton = document.querySelector('button');
+      console.log('First Button Element:', firstButton);
+      console.log('First Button innerHTML:', firstButton.innerHTML);
+
+      // Modify innerHTML
+      firstButton.innerHTML = 'Changed First Button';
+
+      // 3. Accessing element by Class Selector (.js-button)
+      const secondButton = document.querySelector('.js-button');
+      console.log('Second Button Element:', secondButton);
+      secondButton.innerText = 'Second Button (Modified)';
+
+      // 4. Demonstrating window object auto-prefix shortcut
+      window.console.log('Accessing console via window object');
+      console.log('window.document === document:', window.document === document); // true
+    </script>
+  </body>
+</html>

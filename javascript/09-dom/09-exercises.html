@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 9 Exercises (9a - 9f)</title>
+  </head>
+  <body>
+    <!-- 9a: Basic button for querySelector -->
+    <button class="js-button-9a">9a</button>
+
+    <!-- 9b: Button text modification -->
+    <button class="js-button-9b">9b</button>
+
+    <hr>
+
+    <!-- 9c: Coin Flip Selection -->
+    <p>Coin Flip Choice</p>
+    <button onclick="displayChoice('heads');">heads</button>
+    <button onclick="displayChoice('tails');">tails</button>
+    <p class="js-choice-result"></p>
+
+    <hr>
+
+    <!-- 9d, 9e, 9f: Name Input with Button and Keyboard Support -->
+    <p>Name Submission</p>
+    <input 
+      placeholder="Name" 
+      class="js-name-input"
+      onkeydown="handleNameKeyDown(event);"
+    >
+    <button onclick="submitName();">Submit</button>
+    <p class="js-name-display"></p>
+
+    <script>
+      // ==========================================
+      // 9a: Target button using querySelector and log to console
+      // ==========================================
+      const button9a = document.querySelector('.js-button-9a');
+      console.log('9a Button:', button9a);
+
+      // ==========================================
+      // 9b: Target second button using class selector and modify text
+      // ==========================================
+      const button9b = document.querySelector('.js-button-9b');
+      button9b.innerText = '9b done!';
+
+      // ==========================================
+      // 9c: Display selected coin flip choice in a paragraph
+      // ==========================================
+      function displayChoice(choice) {
+        document.querySelector('.js-choice-result')
+          .innerHTML = `You chose: ${choice}`;
+      }
+
+      // ==========================================
+      // 9e & 9f: Handle 'Enter' key press on input
+      // ==========================================
+      function handleNameKeyDown(event) {
+        if (event.key === 'Enter') {
+          submitName();
+        }
+      }
+
+      // ==========================================
+      // 9d & 9f: Shared function to read input value and display message
+      // ==========================================
+      function submitName() {
+        const inputElement = document.querySelector('.js-name-input');
+        const nameText = inputElement.value;
+
+        document.querySelector('.js-name-display')
+          .innerHTML = `Your name is: ${nameText}`;
+      }
+    </script>
+  </body>
+</html>

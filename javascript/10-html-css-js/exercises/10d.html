@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 10d</title>
+    <link rel="stylesheet" href="styles/10d-10g.css">
+  </head>
+  <body>
+    <button class="toggle-button js-toggle-button" onclick="toggleButton();">Gaming</button>
+
+    <script>
+      function toggleButton() {
+        const button = document.querySelector('.js-toggle-button');
+        
+        // Toggle 'is-toggled' class on/off
+        if (button.classList.contains('is-toggled')) {
+          button.classList.remove('is-toggled');
+        } else {
+          button.classList.add('is-toggled');
+        }
+      }
+    </script>
+  </body>
+</html>

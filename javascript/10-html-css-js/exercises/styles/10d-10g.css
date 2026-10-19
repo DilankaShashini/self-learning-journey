@@ -1,0 +1,17 @@
+/* Base style for toggle buttons */
+.toggle-button {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Active ON state style */
+.is-toggled {
+  background-color: black;
+  color: white;
+}

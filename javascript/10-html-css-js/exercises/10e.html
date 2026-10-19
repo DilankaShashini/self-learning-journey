@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 10e</title>
+    <link rel="stylesheet" href="styles/10d-10g.css">
+  </head>
+  <body>
+    <button class="toggle-button js-button-1" onclick="toggleButton('.js-button-1');">Gaming</button>
+    <button class="toggle-button js-button-2" onclick="toggleButton('.js-button-2');">Music</button>
+    <button class="toggle-button js-button-3" onclick="toggleButton('.js-button-3');">Tech</button>
+
+    <script>
+      function toggleButton(selector) {
+        const button = document.querySelector(selector);
+        if (button.classList.contains('is-toggled')) {
+          button.classList.remove('is-toggled');
+        } else {
+          button.classList.add('is-toggled');
+        }
+      }
+    </script>
+  </body>
+</html>

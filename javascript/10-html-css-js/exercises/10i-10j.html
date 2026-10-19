@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises 10i & 10j (Calculator)</title>
+    <link rel="stylesheet" href="styles/10j-calculator.css">
+  </head>
+  <body>
+    <!-- Display output area -->
+    <p class="js-calculation-display calculation-display"></p>
+
+    <!-- Row 1 -->
+    <p>
+      <button class="calc-button gray-button" onclick="updateCalculation('1');">1</button>
+      <button class="calc-button gray-button" onclick="updateCalculation('2');">2</button>
+      <button class="calc-button gray-button" onclick="updateCalculation('3');">3</button>
+      <button class="calc-button orange-button" onclick="updateCalculation(' + ');">+</button>
+    </p>
+
+    <!-- Row 2 -->
+    <p>
+      <button class="calc-button gray-button" onclick="updateCalculation('4');">4</button>
+      <button class="calc-button gray-button" onclick="updateCalculation('5');">5</button>
+      <button class="calc-button gray-button" onclick="updateCalculation('6');">6</button>
+      <button class="calc-button orange-button" onclick="updateCalculation(' - ');">-</button>
+    </p>
+
+    <!-- Row 3 -->
+    <p>
+      <button class="calc-button gray-button" onclick="updateCalculation('7');">7</button>
+      <button class="calc-button gray-button" onclick="updateCalculation('8');">8</button>
+      <button class="calc-button gray-button" onclick="updateCalculation('9');">9</button>
+      <button class="calc-button orange-button" onclick="updateCalculation(' * ');">*</button>
+    </p>
+
+    <!-- Row 4 -->
+    <p>
+      <button class="calc-button gray-button" onclick="updateCalculation('0');">0</button>
+      <button class="calc-button gray-button" onclick="updateCalculation('.');">.</button>
+      <button class="calc-button gray-button" onclick="evaluateCalculation();">=</button>
+      <button class="calc-button orange-button" onclick="updateCalculation(' / ');">/</button>
+    </p>
+
+    <!-- Row 5 -->
+    <p>
+      <button class="calc-button gray-button clear-button" onclick="clearCalculation();">Clear</button>
+    </p>
+
+    <script src="scripts/10j-calculator.js"></script>
+  </body>
+</html>

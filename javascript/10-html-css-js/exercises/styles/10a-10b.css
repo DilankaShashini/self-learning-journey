@@ -1,0 +1,36 @@
+/* Exercise 10a: Amazon Yellow Add to Cart Button */
+.amazon-button {
+  background-color: rgb(255, 216, 20);
+  color: black;
+  border: none;
+  height: 36px;
+  width: 140px;
+  border-radius: 18px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Exercise 10b: Uber Request Now & Schedule Buttons */
+.uber-request-button {
+  background-color: black;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 120px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.uber-schedule-button {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  border: none;
+  height: 40px;
+  width: 150px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}

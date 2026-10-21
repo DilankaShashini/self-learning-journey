@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List - Part I</title>
+    <link rel="stylesheet" href="styles/11-todo-list.css">
+  </head>
+  <body>
+    <!-- Todo List Practice 1 -->
+    <p>Todo List Practice 1</p>
+    <input 
+      placeholder="Todo name"
+      class="js-input"
+      onkeydown="ifEnterKeyDown(event);"
+    >
+    <button class="js-add-button" onclick="addToList();">
+      Add
+    </button>
+
+    <hr>
+
+    <!-- Todo List Practice 2 -->
+    <p>Todo List Practice 2</p>
+    <input 
+      placeholder="Todo name"
+      class="js-input-2"
+      onkeydown="ifEnterKeyDown2(event);"
+    >
+    <button class="js-add-button-2" onclick="addToList2();">
+      Add
+    </button>
+
+    <!-- Dynamic Container for generated todo list HTML -->
+    <div class="js-todo-list"></div>
+
+    <script src="scripts/11-todo-list.js"></script>
+  </body>
+</html>

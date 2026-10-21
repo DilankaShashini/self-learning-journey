@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 11 Part 2 Exercises (11o - 11w)</title>
+  </head>
+  <body>
+    <script>
+      // ==========================================
+      // 11o & 11p. Search Array for 'search' string with early break
+      // ==========================================
+      function searchArray(array) {
+        let index = -1;
+
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === 'search') {
+            index = i;
+            break; // Stop at first match (11p requirement)
+          }
+        }
+
+        console.log(index);
+      }
+
+      console.log('11o/11p Output:');
+      searchArray(['hello', 'world', 'search', 'good']); // 2
+      searchArray(['not', 'found']); // -1
+      searchArray(['hello', 'world', 'search', 'good', 'search']); // 2
+
+      // ==========================================
+      // 11q. Function findIndex(array, word)
+      // ==========================================
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            return i; // Returns index immediately on first match
+          }
+        }
+        return -1; // Word not found
+      }
+
+      console.log('11q Output:');
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'red')); // 1
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow')); // -1
+
+      // ==========================================
+      // 11r & 11s. Function removeEgg(foods)
+      // ==========================================
+      function removeEgg11s(foods) {
+        const result = [];
+        let eggsRemoved = 0;
+
+        for (let i = 0; i < foods.length; i++) {
+          // Remove only the first 2 eggs
+          if (foods[i] === 'egg' && eggsRemoved < 2) {
+            eggsRemoved++;
+            continue; // Skip adding egg to result array
+          }
+          result.push(foods[i]);
+        }
+
+        return result;
+      }
+
+      console.log('11r/11s Output:');
+      console.log(removeEgg11s(['egg', 'apple', 'egg', 'egg', 'ham'])); // ['apple', 'egg', 'ham']
+
+      // ==========================================
+      // 11t & 11u. Function removeEgg using .reverse() without mutating original array
+      // ==========================================
+      function removeEgg11u(foods) {
+        // Use .slice() to create a copy before reversing (11u requirement)
+        const foodsCopy = foods.slice();
+        const reversedFoods = foodsCopy.reverse();
+
+        const result = [];
+        let eggsRemoved = 0;
+
+        for (let i = 0; i < reversedFoods.length; i++) {
+          if (reversedFoods[i] === 'egg' && eggsRemoved < 2) {
+            eggsRemoved++;
+            continue;
+          }
+          result.push(reversedFoods[i]);
+        }
+
+        // Reverse back to maintain original array order
+        return result.reverse();
+      }
+
+      console.log('11t/11u Output:');
+      const foodsArray = ['egg', 'apple', 'egg', 'egg', 'ham'];
+      console.log('Result:', removeEgg11u(foodsArray)); // ['egg', 'apple', 'ham']
+      console.log('Original Array (Unmutated):', foodsArray); // ['egg', 'apple', 'egg', 'egg', 'ham']
+
+      // ==========================================
+      // 11v. Challenge: FizzBuzz Problem
+      // ==========================================
+      for (let i = 1; i <= 20; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log('FizzBuzz');
+        } else if (i % 3 === 0) {
+          console.log('Fizz');
+        } else if (i % 5 === 0) {
+          console.log('Buzz');
+        } else {
+          console.log(i);
+        }
+      }
+
+      // ==========================================
+      // 11w. Challenge: unique(array) using findIndex()
+      // ==========================================
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            return i; // Returns index immediately on first match
+          }
+        }
+        return -1; // Word not found
+      }
+
+      function unique(array) {
+        const result = [];
+
+        for (let i = 0; i < array.length; i++) {
+          const word = array[i];
+
+          // If word is not in result array yet, add it
+          if (findIndex(result, word) === -1) {
+            result.push(word);
+          }
+        }
+
+        return result;
+      }
+
+      console.log('11w Output:');
+      console.log(unique(['green', 'red', 'blue', 'red'])); // ['green', 'red', 'blue']
+      console.log(unique(['red', 'green', 'green', 'red'])); // ['red', 'green']
+
+    </script>
+  </body>
+</html>

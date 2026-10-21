@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List - Final</title>
+    <link rel="stylesheet" href="styles/11-todo-list-final.css">
+  </head>
+  <body>
+    <p>Todo List</p>
+
+    <!-- CSS Grid Input Row -->
+    <div class="todo-input-grid">
+      <input 
+        placeholder="Todo name"
+        class="js-input-name input-name"
+      >
+      <input
+        type="date"
+        class="js-input-date input-date"
+      >
+      <button 
+        class="js-add-button add-button"       
+        onclick="addToList();"
+      >
+        Add
+      </button>
+    </div>
+
+    <!-- Dynamic CSS Grid Container for generated todo list HTML -->
+    <div class="js-todo-list todo-list"></div>
+
+    <script src="scripts/11-todo-list-final.js"></script>
+  </body>
+</html>

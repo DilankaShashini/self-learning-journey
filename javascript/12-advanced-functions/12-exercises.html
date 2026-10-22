@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <!-- 12c, 12d: Start / Finished Button -->
+    <h3>12c & 12d: Button State Change</h3>
+    <button class="js-start-button">Start</button>
+
+    <!-- 12e, 12f: Add to Cart with Timeout Refresh -->
+    <h3>12e & 12f: Add to Cart (Clear Timeout Refresh)</h3>
+    <button class="js-add-to-cart-button">Add to cart</button>
+    <p class="js-added-message"></p>
+
+    <!-- 12g, 12h, 12i: Dynamic Document Title App -->
+    <h3>12g, 12h & 12i: Messaging App Notification</h3>
+    <button class="js-add-message-button">Add</button>
+    <button class="js-remove-message-button">Remove</button>
+
+    <script>
+      // ==========================================
+      // 12a. Variable holding function
+      // ==========================================
+      const add = () => console.log(2 + 3);
+      add();
+      add();
+
+      // ==========================================
+      // 12b. Function runTwice(fun)
+      // ==========================================
+      const runTwice = (fun) => {
+        fun();
+        fun();
+      };
+      runTwice(() => console.log('12b'));
+      runTwice(add);
+
+      // ==========================================
+      // 12c & 12d (Updated with 12p & 12q: arrow functions & addEventListener)
+      // ==========================================
+      const startButton = document.querySelector('.js-start-button');
+      startButton.addEventListener('click', () => {
+        startButton.innerText = 'Loading...';
+        setTimeout(() => {
+          startButton.innerText = 'Finished!';
+        }, 1000);
+      });
+
+      // ==========================================
+      // 12e & 12f (Updated with clearTimeout to refresh wait time)
+      // ==========================================
+      const addToCartButton = document.querySelector('.js-add-to-cart-button');
+      const addedMessageElement = document.querySelector('.js-added-message');
+      let timeoutId;
+
+      addToCartButton.addEventListener('click', () => {
+        addedMessageElement.innerText = 'Added';
+
+        // Clear previous timeout if button is clicked again within 2 seconds
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(() => {
+          addedMessageElement.innerText = '';
+        }, 2000);
+      });
+
+      // ==========================================
+      // 12g, 12h & 12i (Dynamic document.title with interval control)
+      // ==========================================
+      let messages = 2;
+      let intervalId;
+      let isDisplayingNotification = false;
+
+      const updateTitleNotification = () => {
+        if (isDisplayingNotification) {
+          clearInterval(intervalId);
+          isDisplayingNotification = false;
+        }
+
+        if (messages > 0) {
+          isDisplayingNotification = true;
+          intervalId = setInterval(() => {
+            if (document.title === 'App') {
+              document.title = `(${messages}) New messages`;
+            } else {
+              document.title = 'App';
+            }
+          }, 1000);
+        } else {
+          document.title = 'App';
+        }
+      };
+
+      // Start initial notification loop
+      updateTitleNotification();
+
+      document.querySelector('.js-add-message-button')
+        .addEventListener('click', () => {
+          messages++;
+          updateTitleNotification();
+        });
+
+      document.querySelector('.js-remove-message-button')
+        .addEventListener('click', () => {
+          if (messages > 0) {
+            messages--;
+            updateTitleNotification();
+          }
+        });
+        
+        // ==========================================
+        // 12j & 12k. Arrow function multiply on one line
+        // ==========================================
+        const multiply = (a, b) => a * b;
+        console.log('12j/12k multiply(2, 3):', multiply(2, 3)); // 6
+        console.log('12j/12k multiply(7, 10):', multiply(7, 10)); // 70
+          
+        // ==========================================
+        // 12l. countPositive(nums) using .forEach()
+        // ==========================================
+        const countPositive = (nums) => {
+          let count = 0;
+          nums.forEach((num) => {
+            if (num > 0) {
+              count++;
+            }
+          });
+          return count;
+        };
+        console.log('12l countPositive([1, -3, 5]):', countPositive([1, -3, 5])); // 2
+        console.log('12l countPositive([-2, 3, -5, 7, 10]):', countPositive([-2, 3, -5, 7, 10])); // 3
+        
+        // ==========================================
+        // 12m. addNum(array, num) using .map() one-line shortcut
+        // ==========================================
+        const addNum = (array, num) => array.map((value) => value + num);
+        console.log('12m addNum([1, 2, 3], 2):', addNum([1, 2, 3], 2)); // [3, 4, 5]
+        console.log('12m addNum([-2, -1, 0, 99], 2):', addNum([-2, -1, 0, 99], 2)); // [0, 1, 2, 101]
+
+        // ==========================================
+        // 12n. removeEgg(foods) using .filter()
+        // ==========================================
+        const removeEgg = foods => foods.filter((food) => food !== 'egg');
+        console.log('12n removeEgg:', removeEgg(['egg', 'apple', 'egg', 'egg', 'ham'])); // ['apple', 'ham']
+
+        // ==========================================
+        // 12o. removeEgg(foods) removing only the FIRST 2 eggs using .filter()
+        // ==========================================
+        const removeFirstTwoEggs = (foods) => {
+          let eggsRemoved = 0;
+          return foods.filter((food) => {
+            if (food === 'egg' && eggsRemoved < 2) {
+              eggsRemoved++;
+              return false; // Exclude from filtered result
+            }
+            return true; // Keep in result
+          });
+        };
+        console.log('12o removeFirstTwoEggs:', removeFirstTwoEggs(['egg', 'apple', 'egg', 'egg', 'ham'])); // ['apple', 'egg', 'ham']
+    </script>
+  </body>
+</html>

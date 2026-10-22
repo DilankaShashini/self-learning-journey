@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions Practice</title>
+  </head>
+  <body>
+    <button class="js-button">Click</button>
+
+    <script>
+      //-----------------------------------------------
+      // 1. Function Declarations & Expressions
+      //-----------------------------------------------
+      function greeting() {
+        console.log('hello');
+      }
+      greeting();
+
+      // Function Expression
+      const function1 = function greeting() {
+        console.log('hello2');
+      };
+      console.log(typeof function1); // 'function'
+      function1();
+
+      // Anonymous Function Expression
+      const function2 = function() {
+        console.log('hello3');
+      };
+      function2();
+
+      //-----------------------------------------------
+      // 2. Methods in Objects
+      //-----------------------------------------------
+      const object1 = {
+        num: 2,
+        fun: function() {
+          console.log('hello4');
+        }
+      };
+      object1.fun();
+
+      //-----------------------------------------------
+      // 3. Passing Functions into Functions (Callbacks)
+      //-----------------------------------------------
+      function run(param) {
+        param();
+      }
+      run(function() {
+        console.log('hello5');
+      });
+
+      //-----------------------------------------------
+      // 4. Asynchronous Timing Functions
+      //-----------------------------------------------
+      setTimeout(function() {
+        console.log('timeout after 3 seconds');
+      }, 3000);
+      console.log('Synchronous line executes first');
+
+      const intervalId = setInterval(function() {
+        console.log('interval tick');
+      }, 3000);
+      clearInterval(intervalId); // Stop interval
+
+      //-----------------------------------------------
+      // 5. .forEach() Array Method
+      //-----------------------------------------------
+      const todoList = ['make dinner', 'wash dishes', 'watch youtube'];
+      todoList.forEach((value, index) => {
+        if (value === 'wash dishes') {
+          return; // Acts like continue
+        }
+        console.log(`${index}: ${value}`);
+      });
+
+      //-----------------------------------------------
+      // 6. Arrow Functions & Shortcuts
+      //-----------------------------------------------
+      const oneParam = param => console.log(param + 1);
+      oneParam(2); // 3
+
+      const oneLine = () => 2 + 3;
+      console.log('One line return:', oneLine()); // 5
+
+      //-----------------------------------------------
+      // 7. addEventListener & removeEventListener
+      //-----------------------------------------------
+      const buttonElement = document.querySelector('.js-button');
+
+      const clickHandler = () => {
+        console.log('Button Clicked');
+
+        // Remove the listener after the first click
+        buttonElement.removeEventListener('click', clickHandler);
+      };
+
+      buttonElement.addEventListener('click', clickHandler);
+
+      //-----------------------------------------------
+      // 8. Functional Array Methods (.filter & .map)
+      //-----------------------------------------------
+      const positiveNumbers = [1, -3, 5].filter(value => value >= 0);
+      console.log('Filtered Positive Array:', positiveNumbers); // [1, 5]
+
+      const doubledValues = [1, 1, 3].map(value => value * 2);
+      console.log('Mapped Array:', doubledValues); // [2, 2, 6]
+    </script>
+  </body>
+</html>

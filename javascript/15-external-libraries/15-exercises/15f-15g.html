@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises 15f & 15g - Default Import & Aliasing</title>
+  </head>
+  <body>
+    <script type="module">
+      import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+      
+      // 15g: Renaming default export to 'isSatSun' during import
+      import isSatSun from './15f-utils.js';
+
+      const testDate = dayjs();
+      console.log('15f/15g Test using aliased default import (isSatSun):', isSatSun(testDate));
+    </script>
+  </body>
+</html>

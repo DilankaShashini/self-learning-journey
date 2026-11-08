@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DayJS Exercises (15a - 15d)</title>
+  </head>
+  <body>
+    <script type="module">
+      import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
+      const today = dayjs();
+
+      // 15a: Date 5 days after today formatted as '<Month> <Day of Month>'
+      const fiveDaysLater = today.add(5, 'days');
+      console.log('15a (5 days later):', fiveDaysLater.format('MMMM D'));
+
+      // 15b: Date 1 month after today
+      const oneMonthLater = today.add(1, 'month');
+      console.log('15b (1 month later):', oneMonthLater.format('MMMM D'));
+
+      // 15c: Date 1 month before today using .subtract()
+      const oneMonthBefore = today.subtract(1, 'month');
+      console.log('15c (1 month before):', oneMonthBefore.format('MMMM D'));
+
+      // 15d: Display day of the week (e.g., 'Monday', 'Tuesday')
+      console.log('15d (Day of week):', today.format('dddd'));
+    </script>
+  </body>
+</html>

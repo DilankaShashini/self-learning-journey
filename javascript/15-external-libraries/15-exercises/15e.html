@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 15e - isWeekend</title>
+  </head>
+  <body>
+    <script type="module">
+      import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
+      // 15e: Create isWeekend function
+      function isWeekend(date) {
+        const dayOfWeek = date.format('dddd');
+        return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday';
+      }
+
+      // Testing with different dates
+      const date1 = dayjs(); // Today
+      const date2 = dayjs().add(2, 'days'); // Test future date
+      
+      console.log('Is today weekend?', isWeekend(date1));
+      console.log('Is date 2 days later weekend?', isWeekend(date2));
+    </script>
+  </body>
+</html>

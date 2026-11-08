@@ -1,4 +1,4 @@
-# 🚀 Dilanka Shashini's Self-Learning & Engineering Hub
+# 🚀 Self-Learning & Engineering Hub
 
 <div align="center">
 
